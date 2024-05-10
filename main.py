@@ -5,6 +5,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn import metrics
 
 iris = pd.read_csv('iris.csv')
+print(iris.info)
 #print(iris.groupby('species').size())
 
 setosa = iris[iris.species == "setosa"]
@@ -39,23 +40,23 @@ log_reg = LogisticRegression()
 log_reg.fit(X_train, y_train)
 
 training_prediction = log_reg.predict(X_train)
-print(training_prediction)
+# print(training_prediction)
 
 test_prediction = log_reg.predict(X_test)
-print(test_prediction)
+# print(test_prediction)
 
-print("Precision, Recall, Confusion matrix, in training\n")
-
-# Precision Recal scores
-print(metrics.classification_report(y_train, training_prediction, digits=3))
-
-# Confusion matrix
-print(metrics.confusion_matrix(y_train, training_prediction))
-
-print("Precision, Recall, Confusion matrix, in testing\n")
+# print("Precision, Recall, Confusion matrix, in training\n")
 
 # Precision Recal scores
-print(metrics.classification_report(y_test, test_prediction, digits=3))
+# print(metrics.classification_report(y_train, training_prediction, digits=3))
 
 # Confusion matrix
-print(metrics.confusion_matrix(y_test, test_prediction))
+# print(metrics.confusion_matrix(y_train, training_prediction))
+
+# print("Precision, Recall, Confusion matrix, in testing\n")
+
+# Precision Recal scores
+# print(metrics.classification_report(y_test, test_prediction, digits=3))
+
+# Confusion matrix
+# print(metrics.confusion_matrix(y_test, test_prediction))
